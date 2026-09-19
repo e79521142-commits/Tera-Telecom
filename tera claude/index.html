@@ -1,0 +1,4217 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TERA TELECOM - Internet de alta velocidade por fibra óptica e rádio."
+    >
+          <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>TERA TELECOM | Internet que conecta você</title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #050505;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+
+        :root {
+
+            --red: #e50914;
+
+            --red-light: #ff303b;
+
+            --red-dark: #870008;
+
+            --black: #050505;
+
+            --black-2: #0b0b0b;
+
+            --card: #111111;
+
+            --white: #ffffff;
+
+            --gray: #a3a3a3;
+
+            --gray-dark: #666666;
+
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background: #a5000a;
+
+            border-radius: 20px;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ed1c24;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            position: fixed;
+
+            z-index: 999;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            transition:
+                .35s ease;
+
+        }
+
+
+        header.scrolled {
+
+            background:
+                rgba(5, 5, 5, .88);
+
+            backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+
+        }
+
+
+        .nav {
+
+            width:
+                min(
+                    1400px,
+                    92%
+                );
+
+            height: 82px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                space-between;
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 22px;
+
+            font-weight: 900;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .logo-symbol {
+
+            width: 43px;
+
+            height: 43px;
+
+            border-radius: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff303b,
+                    #a50009
+                );
+
+            box-shadow:
+                0 0 30px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .35
+                );
+
+            position: relative;
+
+        }
+
+
+        .logo-symbol::before {
+
+            content: "";
+
+            width: 18px;
+
+            height: 18px;
+
+            border:
+                3px solid white;
+
+            border-radius: 50%;
+
+            border-right-color:
+                transparent;
+
+        }
+
+
+        .logo-symbol::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 6px;
+
+            height: 6px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            top: 9px;
+
+            right: 9px;
+
+        }
+
+
+        .logo span {
+            color:
+                var(--red-light);
+        }
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        .menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+        }
+
+
+        .menu a {
+
+            color:
+                #bcbcbc;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition:
+                .25s;
+
+        }
+
+
+        .menu a:hover {
+
+            color: white;
+
+        }
+
+
+        .nav-button {
+
+            padding:
+                12px 19px;
+
+            border-radius: 8px;
+
+            background:
+                var(--red);
+
+            color: white !important;
+
+            box-shadow:
+                0 8px 25px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .25
+                );
+
+        }
+
+
+        .menu-button {
+
+            display: none;
+
+            width: 43px;
+
+            height: 43px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .12
+                );
+
+            border-radius: 9px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .04
+                );
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 21px;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 920px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 80px;
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 40%,
+                    rgba(
+                        229,
+                        9,
+                        20,
+                        .25
+                    ),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 20% 100%,
+                    rgba(
+                        150,
+                        0,
+                        0,
+                        .22
+                    ),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    115deg,
+                    #040404,
+                    #150203 48%,
+                    #090909
+                );
+
+        }
+
+
+        /* =====================================================
+           GRID
+        ===================================================== */
+
+        .grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .025
+                    ) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .025
+                    ) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                65px 65px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           PARTÍCULAS
+        ===================================================== */
+
+        .particles {
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+
+        }
+
+
+        .particle {
+
+            position: absolute;
+
+            width: 3px;
+
+            height: 3px;
+
+            background:
+                #ff333d;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 12px
+                #ff333d;
+
+            animation:
+                particleFloat
+                linear
+                infinite;
+
+            opacity: .5;
+
+        }
+
+
+        @keyframes particleFloat {
+
+            from {
+
+                transform:
+                    translateY(100vh);
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-20vh);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           GLOW
+        ===================================================== */
+
+        .glow {
+
+            position: absolute;
+
+            width: 600px;
+
+            height: 600px;
+
+            right: -250px;
+
+            top: 150px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .20
+                );
+
+            filter:
+                blur(110px);
+
+            animation:
+                glow 6s
+                ease-in-out
+                infinite;
+
+        }
+
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+
+                opacity: .5;
+            }
+
+            50% {
+                transform:
+                    scale(1.25);
+
+                opacity: .9;
+            }
+
+        }
+
+
+        /* =====================================================
+           HERO CONTAINER
+        ===================================================== */
+
+        .hero-container {
+
+            position: relative;
+
+            z-index: 5;
+
+            width:
+                min(
+                    1400px,
+                    90%
+                );
+
+            margin:
+                0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                500px;
+
+            align-items: center;
+
+            gap: 70px;
+
+        }
+
+
+        /* =====================================================
+           HERO TEXTO
+        ===================================================== */
+
+        .hero-text {
+
+            animation:
+                heroEntrance
+                1s
+                ease
+                forwards;
+
+        }
+
+
+        @keyframes heroEntrance {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(35px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                9px 15px;
+
+            border-radius: 50px;
+
+            background:
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .09
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    50,
+                    60,
+                    .25
+                );
+
+            color:
+                #ffafb3;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing:
+                .8px;
+
+            margin-bottom: 24px;
+
+        }
+
+
+        .tag-dot {
+
+            width: 7px;
+
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                #ff2632;
+
+            box-shadow:
+                0 0 12px
+                #ff2632;
+
+            animation:
+                pulse
+                1.5s
+                infinite;
+
+        }
+
+
+        @keyframes pulse {
+
+            0% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(
+                        255,
+                        30,
+                        40,
+                        .7
+                    );
+            }
+
+            70% {
+                box-shadow:
+                    0 0 0 9px
+                    rgba(
+                        255,
+                        30,
+                        40,
+                        0
+                    );
+            }
+
+            100% {
+                box-shadow:
+                    0 0 0 0
+                    rgba(
+                        255,
+                        30,
+                        40,
+                        0
+                    );
+            }
+
+        }
+
+
+        h1 {
+
+            max-width: 850px;
+
+            font-size:
+                clamp(
+                    50px,
+                    6.5vw,
+                    88px
+                );
+
+            line-height:
+                .93;
+
+            letter-spacing:
+                -5px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        h1 .red {
+
+            display: block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1f2b,
+                    #ff6970
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+        }
+
+
+        .description {
+
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color:
+                #b5b5b5;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        /* =====================================================
+           BOTÕES
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 13px;
+
+            margin-top: 32px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            padding:
+                16px 23px;
+
+            border-radius:
+                9px;
+
+            font-size:
+                12px;
+
+            font-weight:
+                900;
+
+            transition:
+                .3s;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-primary {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff2631,
+                    #bd000b
+                );
+
+            color: white;
+
+            box-shadow:
+                0 15px 35px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .25
+                );
+
+        }
+
+
+        .btn-primary:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 20px 45px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .45
+                );
+
+        }
+
+
+        .btn-secondary {
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .04
+                );
+
+            color: white;
+
+            backdrop-filter:
+                blur(10px);
+
+        }
+
+
+        .btn-secondary:hover {
+
+            background:
+                white;
+
+            color:
+                #111;
+
+            transform:
+                translateY(-4px);
+
+        }
+
+
+        /* =====================================================
+           ESTATÍSTICAS
+        ===================================================== */
+
+        .stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            max-width:
+                590px;
+
+            margin-top:
+                45px;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            padding-top:
+                24px;
+
+        }
+
+
+        .stat {
+
+            position:
+                relative;
+
+            padding-left:
+                15px;
+
+        }
+
+
+        .stat:not(:first-child) {
+
+            border-left:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+        }
+
+
+        .stat strong {
+
+            display:
+                block;
+
+            font-size:
+                21px;
+
+        }
+
+
+        .stat span {
+
+            display:
+                block;
+
+            margin-top:
+                5px;
+
+            color:
+                #777;
+
+            font-size:
+                10px;
+
+        }
+
+
+        /* =====================================================
+           VISUAL
+        ===================================================== */
+
+        .visual {
+
+            position:
+                relative;
+
+            height:
+                570px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .orbit {
+
+            position:
+                absolute;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    35,
+                    45,
+                    .17
+                );
+
+            border-radius:
+                50%;
+
+            animation:
+                rotate
+                18s
+                linear
+                infinite;
+
+        }
+
+
+        .orbit.one {
+
+            width:
+                400px;
+
+            height:
+                400px;
+
+        }
+
+
+        .orbit.two {
+
+            width:
+                500px;
+
+            height:
+                500px;
+
+            animation-duration:
+                25s;
+
+            animation-direction:
+                reverse;
+
+            border-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+        }
+
+
+        .orbit.three {
+
+            width:
+                300px;
+
+            height:
+                300px;
+
+            animation-duration:
+                12s;
+
+        }
+
+
+        .orbit::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                8px;
+
+            height:
+                8px;
+
+            border-radius:
+                50%;
+
+            background:
+                #ff2935;
+
+            box-shadow:
+                0 0 18px
+                #ff2935;
+
+            top:
+                20px;
+
+            left:
+                50%;
+
+        }
+
+
+        @keyframes rotate {
+
+            from {
+                transform:
+                    rotate(0deg);
+            }
+
+            to {
+                transform:
+                    rotate(360deg);
+            }
+
+        }
+
+
+        /* =====================================================
+           CARD PRINCIPAL
+        ===================================================== */
+
+        .internet-card {
+
+            --mouseX: 0px;
+            --mouseY: 0px;
+
+            position:
+                relative;
+
+            z-index:
+                20;
+
+            width:
+                410px;
+
+            padding:
+                30px;
+
+            border-radius:
+                27px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .13
+                    ),
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .025
+                    )
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
+
+            backdrop-filter:
+                blur(25px);
+
+            box-shadow:
+                0 40px 100px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .5
+                );
+
+            transform:
+                translate(
+                    var(--mouseX),
+                    var(--mouseY)
+                );
+
+            transition:
+                transform
+                .15s
+                ease;
+
+        }
+
+
+        .card-top {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            margin-bottom:
+                28px;
+
+        }
+
+
+        .card-title {
+
+            color:
+                #999;
+
+            font-size:
+                10px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                1px;
+
+        }
+
+
+        .online {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                6px;
+
+            color:
+                #aaa;
+
+            font-size:
+                9px;
+
+        }
+
+
+        .online i {
+
+            width:
+                7px;
+
+            height:
+                7px;
+
+            background:
+                #28df72;
+
+            border-radius:
+                50%;
+
+            box-shadow:
+                0 0 12px
+                #28df72;
+
+        }
+
+
+        .speed {
+
+            font-size:
+                88px;
+
+            line-height:
+                .85;
+
+            letter-spacing:
+                -7px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .speed span {
+
+            font-size:
+                27px;
+
+            letter-spacing:
+                -1px;
+
+            color:
+                #ff3440;
+
+        }
+
+
+        .speed-info {
+
+            margin-top:
+                12px;
+
+            color:
+                #777;
+
+            font-size:
+                11px;
+
+        }
+
+
+        .speed-bar {
+
+            height:
+                6px;
+
+            margin:
+                25px 0;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .speed-bar span {
+
+            display:
+                block;
+
+            width:
+                0;
+
+            height:
+                100%;
+
+            border-radius:
+                inherit;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #97000a,
+                    #ff303b
+                );
+
+            animation:
+                loading
+                1.7s
+                .5s
+                forwards;
+
+        }
+
+
+        @keyframes loading {
+
+            to {
+                width:
+                    94%;
+            }
+
+        }
+
+
+        /* =====================================================
+           MINI CARDS
+        ===================================================== */
+
+        .mini-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap:
+                9px;
+
+        }
+
+
+        .mini-card {
+
+            padding:
+                15px;
+
+            border-radius:
+                13px;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .18
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+            transition:
+                .3s;
+
+        }
+
+
+        .mini-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(
+                    255,
+                    40,
+                    50,
+                    .35
+                );
+
+        }
+
+
+        .mini-icon {
+
+            font-size:
+                18px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .mini-card strong {
+
+            display:
+                block;
+
+            font-size:
+                11px;
+
+        }
+
+
+        .mini-card small {
+
+            display:
+                block;
+
+            margin-top:
+                4px;
+
+            color:
+                #777;
+
+            font-size:
+                9px;
+
+        }
+
+
+        /* =====================================================
+           BADGES
+        ===================================================== */
+
+        .float-badge {
+
+            position:
+                absolute;
+
+            z-index:
+                30;
+
+            padding:
+                13px 16px;
+
+            border-radius:
+                13px;
+
+            background:
+                rgba(
+                    12,
+                    12,
+                    12,
+                    .82
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .12
+                );
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    .4
+                );
+
+            font-size:
+                10px;
+
+            animation:
+                floatBadge
+                3s
+                ease-in-out
+                infinite;
+
+        }
+
+
+        .float-badge strong {
+
+            display:
+                block;
+
+            font-size:
+                12px;
+
+            margin-bottom:
+                3px;
+
+        }
+
+
+        .float-badge small {
+
+            color:
+                #777;
+
+        }
+
+
+        .badge-left {
+
+            left:
+                -30px;
+
+            bottom:
+                90px;
+
+        }
+
+
+        .badge-right {
+
+            right:
+                -25px;
+
+            top:
+                90px;
+
+            animation-delay:
+                1s;
+
+        }
+
+
+        @keyframes floatBadge {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-9px);
+            }
+
+        }
+
+
+        /* =====================================================
+           SEÇÃO DE INFORMAÇÕES
+        ===================================================== */
+
+        .information {
+
+            position:
+                relative;
+
+            z-index:
+                10;
+
+            margin-top:
+                -80px;
+
+            padding-bottom:
+                100px;
+
+        }
+
+
+        .info-container {
+
+            width:
+                min(
+                    1300px,
+                    90%
+                );
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    4,
+                    1fr
+                );
+
+            gap:
+                12px;
+
+        }
+
+
+        .info-card {
+
+            padding:
+                25px;
+
+            min-height:
+                145px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            background:
+                rgba(
+                    18,
+                    18,
+                    18,
+                    .9
+                );
+
+            border-radius:
+                17px;
+
+            backdrop-filter:
+                blur(15px);
+
+            transition:
+                .3s;
+
+        }
+
+
+        .info-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .35
+                );
+
+        }
+
+
+        .info-icon {
+
+            font-size:
+                23px;
+
+            margin-bottom:
+                14px;
+
+        }
+
+
+        .info-card h3 {
+
+            font-size:
+                14px;
+
+            margin-bottom:
+                7px;
+
+        }
+
+
+        .info-card p {
+
+            color:
+                #777;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           SEÇÃO PLANOS
+        ===================================================== */
+
+        .plans {
+
+            position:
+                relative;
+
+            padding:
+                110px 0;
+
+            background:
+                #090909;
+
+        }
+
+
+        .section-header {
+
+            width:
+                min(
+                    900px,
+                    90%
+                );
+
+            margin:
+                0 auto 55px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .section-tag {
+
+            color:
+                #ff3b45;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                2px;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    55px
+                );
+
+            letter-spacing:
+                -2px;
+
+        }
+
+
+        .section-header p {
+
+            max-width:
+                650px;
+
+            margin:
+                15px auto 0;
+
+            color:
+                #777;
+
+            line-height:
+                1.7;
+
+            font-size:
+                14px;
+
+        }
+
+
+        .plans-grid {
+
+            width:
+                min(
+                    1200px,
+                    90%
+                );
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap:
+                18px;
+
+        }
+
+
+        .plan {
+
+            position:
+                relative;
+
+            padding:
+                32px;
+
+            background:
+                #101010;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            border-radius:
+                20px;
+
+            transition:
+                .3s;
+
+        }
+
+
+        .plan:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .5
+                );
+
+        }
+
+
+        .plan.featured {
+
+            border:
+                1px solid
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .5
+                );
+
+            box-shadow:
+                0 20px 70px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .12
+                );
+
+        }
+
+
+        .recommended {
+
+            position:
+                absolute;
+
+            top:
+                -12px;
+
+            right:
+                20px;
+
+            padding:
+                7px 12px;
+
+            border-radius:
+                30px;
+
+            background:
+                var(--red);
+
+            font-size:
+                9px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .plan-name {
+
+            color:
+                #999;
+
+            font-size:
+                11px;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .plan-speed {
+
+            margin:
+                15px 0;
+
+            font-size:
+                48px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        .plan-speed span {
+
+            font-size:
+                15px;
+
+            color:
+                #ff3742;
+
+        }
+
+
+        .plan-price {
+
+            color:
+                #888;
+
+            font-size:
+                11px;
+
+            margin-bottom:
+                22px;
+
+        }
+
+
+        .plan ul {
+
+            list-style:
+                none;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+            padding-top:
+                20px;
+
+        }
+
+
+        .plan li {
+
+            margin:
+                13px 0;
+
+            color:
+                #aaa;
+
+            font-size:
+                11px;
+
+        }
+
+
+        .plan li::before {
+
+            content:
+                "✓";
+
+            color:
+                #ff303b;
+
+            font-weight:
+                900;
+
+            margin-right:
+                8px;
+
+        }
+
+
+        .plan-button {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            text-align:
+                center;
+
+            margin-top:
+                25px;
+
+            padding:
+                13px;
+
+            border-radius:
+                8px;
+
+            background:
+                #1b1b1b;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .08
+                );
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+            transition:
+                .3s;
+
+        }
+
+
+        .plan.featured .plan-button {
+
+            background:
+                var(--red);
+
+            border-color:
+                var(--red);
+
+        }
+
+
+        .plan-button:hover {
+
+            background:
+                #ff2631;
+
+            border-color:
+                #ff2631;
+
+        }
+
+
+        /* =====================================================
+           TECNOLOGIA
+        ===================================================== */
+
+        .technology {
+
+            padding:
+                120px 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #090909,
+                    #050505
+                );
+
+        }
+
+
+        .technology-container {
+
+            width:
+                min(
+                    1200px,
+                    90%
+                );
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap:
+                70px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .technology h2 {
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    60px
+                );
+
+            letter-spacing:
+                -3px;
+
+        }
+
+
+        .technology h2 span {
+
+            color:
+                #ff303b;
+
+        }
+
+
+        .technology-text p {
+
+            margin-top:
+                20px;
+
+            color:
+                #777;
+
+            line-height:
+                1.8;
+
+            font-size:
+                14px;
+
+        }
+
+
+        .technology-cards {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap:
+                12px;
+
+        }
+
+
+        .tech-card {
+
+            padding:
+                25px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .07
+                );
+
+            border-radius:
+                16px;
+
+            background:
+                #101010;
+
+        }
+
+
+        .tech-card .icon {
+
+            font-size:
+                25px;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .tech-card h3 {
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .tech-card p {
+
+            color:
+                #666;
+
+            font-size:
+                10px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+
+            width:
+                min(
+                    1200px,
+                    90%
+                );
+
+            margin:
+                0 auto 100px;
+
+            padding:
+                60px;
+
+            border-radius:
+                25px;
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #9d0009,
+                    #e50914,
+                    #710008
+                );
+
+            box-shadow:
+                0 30px 80px
+                rgba(
+                    229,
+                    9,
+                    20,
+                    .18
+                );
+
+        }
+
+
+        .cta::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                500px;
+
+            height:
+                500px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .15
+                );
+
+            border-radius:
+                50%;
+
+            right:
+                -150px;
+
+            top:
+                -250px;
+
+        }
+
+
+        .cta h2 {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            font-size:
+                clamp(
+                    30px,
+                    5vw,
+                    50px
+                );
+
+            max-width:
+                700px;
+
+        }
+
+
+        .cta p {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            margin-top:
+                13px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .78
+                );
+
+            font-size:
+                13px;
+
+        }
+
+
+        .cta-button {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            display:
+                inline-flex;
+
+            margin-top:
+                25px;
+
+            padding:
+                14px 22px;
+
+            border-radius:
+                8px;
+
+            background:
+                white;
+
+            color:
+                #a30009;
+
+            font-size:
+                11px;
+
+            font-weight:
+                900;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding:
+                50px 0;
+
+            background:
+                #030303;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .06
+                );
+
+        }
+
+
+        .footer-container {
+
+            width:
+                min(
+                    1200px,
+                    90%
+                );
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                30px;
+
+        }
+
+
+        .footer-logo {
+
+            font-weight:
+                900;
+
+            font-size:
+                18px;
+
+        }
+
+
+        .footer-logo span {
+
+            color:
+                #ff303b;
+
+        }
+
+
+        .footer-info {
+
+            color:
+                #555;
+
+            font-size:
+                10px;
+
+            text-align:
+                right;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .hero {
+
+                min-height:
+                    1200px;
+
+            }
+
+
+            .hero-container {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    30px;
+
+                text-align:
+                    center;
+
+            }
+
+
+            .description {
+
+                margin-left:
+                    auto;
+
+                margin-right:
+                    auto;
+
+            }
+
+
+            .buttons {
+
+                justify-content:
+                    center;
+
+            }
+
+
+            .stats {
+
+                margin-left:
+                    auto;
+
+                margin-right:
+                    auto;
+
+                text-align:
+                    left;
+
+            }
+
+
+            .visual {
+
+                height:
+                    520px;
+
+            }
+
+
+            .info-container {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        1fr
+                    );
+
+            }
+
+
+            .plans-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                max-width:
+                    500px;
+
+            }
+
+
+            .technology-container {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 760px) {
+
+            .menu {
+
+                display:
+                    none;
+
+                position:
+                    absolute;
+
+                top:
+                    75px;
+
+                left:
+                    5%;
+
+                right:
+                    5%;
+
+                padding:
+                    20px;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+
+                background:
+                    rgba(
+                        10,
+                        10,
+                        10,
+                        .97
+                    );
+
+                border:
+                    1px solid
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .08
+                    );
+
+                border-radius:
+                    14px;
+
+            }
+
+
+            .menu.open {
+
+                display:
+                    flex;
+
+            }
+
+
+            .menu-button {
+
+                display:
+                    block;
+
+            }
+
+
+            .hero {
+
+                min-height:
+                    1200px;
+
+                padding-top:
+                    100px;
+
+            }
+
+
+            .hero-container {
+
+                width:
+                    88%;
+
+            }
+
+
+            h1 {
+
+                font-size:
+                    48px;
+
+                letter-spacing:
+                    -3px;
+
+            }
+
+
+            .description {
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .stats {
+
+                gap:
+                    10px;
+
+            }
+
+
+            .stat strong {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            .visual {
+
+                height:
+                    430px;
+
+            }
+
+
+            .internet-card {
+
+                width:
+                    100%;
+
+                max-width:
+                    350px;
+
+                padding:
+                    23px;
+
+            }
+
+
+            .speed {
+
+                font-size:
+                    68px;
+
+            }
+
+
+            .orbit.one {
+
+                width:
+                    320px;
+
+                height:
+                    320px;
+
+            }
+
+
+            .orbit.two {
+
+                width:
+                    390px;
+
+                height:
+                    390px;
+
+            }
+
+
+            .orbit.three {
+
+                width:
+                    250px;
+
+                height:
+                    250px;
+
+            }
+
+
+            .float-badge {
+
+                display:
+                    none;
+
+            }
+
+
+            .info-container {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .technology-cards {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .cta {
+
+                padding:
+                    35px 25px;
+
+            }
+
+
+            .footer-container {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .footer-info {
+
+                text-align:
+                    left;
+
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            h1 {
+
+                font-size:
+                    42px;
+
+            }
+
+
+            .stats {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    15px;
+
+            }
+
+
+            .stat:not(:first-child) {
+
+                border-left:
+                    none;
+
+            }
+
+
+            .speed {
+
+                font-size:
+                    60px;
+
+            }
+
+
+            .mini-grid {
+
+                gap:
+                    6px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header id="header">
+
+    <nav class="nav">
+
+        <a href="#inicio" class="logo">
+
+            <div class="logo-symbol"></div>
+
+            TERA <span>TELECOM</span>
+
+        </a>
+
+
+        <div class="menu" id="menu">
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#planos">
+                Planos
+            </a>
+
+            <a href="#tecnologia">
+                Tecnologia
+            </a>
+
+            <a href="#contato">
+                Atendimento
+            </a>
+
+            <a
+                href="#planos"
+                class="nav-button"
+            >
+                Assine agora
+            </a>
+
+        </div>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="inicio"
+>
+
+
+    <div class="grid"></div>
+
+
+    <div class="glow"></div>
+
+
+    <div
+        class="particles"
+        id="particles"
+    ></div>
+
+
+    <div class="hero-container">
+
+
+        <!-- TEXTO -->
+
+        <div class="hero-text">
+
+
+            <div class="tag">
+
+                <span class="tag-dot"></span>
+
+                INTERNET RÁPIDA • ESTÁVEL • CONFIÁVEL
+
+            </div>
+
+
+            <h1>
+
+                Conecte-se com
+
+                <span class="red">
+                    o futuro.
+                </span>
+
+            </h1>
+
+
+            <p class="description">
+
+                A TERA TELECOM leva conexão de alta
+                velocidade até você. Tenha internet para
+                trabalhar, estudar, jogar, assistir seus
+                conteúdos favoritos e manter sua empresa
+                sempre conectada.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="#planos"
+                    class="btn btn-primary"
+                >
+
+                    🚀
+
+                    CONHECER PLANOS
+
+                </a>
+
+
+                <a
+                    href="#contato"
+                    class="btn btn-secondary"
+                >
+
+                    💬
+
+                    FALAR COM A TERA
+
+                </a>
+
+
+            </div>
+
+
+            <div class="stats">
+
+
+                <div class="stat">
+
+                    <strong>
+                        Até 1 Gbps
+                    </strong>
+
+                    <span>
+                        Alta velocidade
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        Fibra + Rádio
+                    </strong>
+
+                    <span>
+                        Tecnologia
+                    </span>
+
+                </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        24 horas
+                    </strong>
+
+                    <span>
+                        Sempre conectado
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- VISUAL -->
+
+        <div class="visual">
+
+
+            <div class="orbit one"></div>
+
+            <div class="orbit two"></div>
+
+            <div class="orbit three"></div>
+
+
+            <div
+                class="float-badge badge-left"
+            >
+
+                <strong>
+                    📡 Fibra + Rádio
+                </strong>
+
+                <small>
+                    Conectividade para você
+                </small>
+
+            </div>
+
+
+            <div
+                class="float-badge badge-right"
+            >
+
+                <strong>
+                    🟢 Rede online
+                </strong>
+
+                <small>
+                    Conexão funcionando
+                </small>
+
+            </div>
+
+
+            <div
+                class="internet-card"
+                id="internetCard"
+            >
+
+
+                <div class="card-top">
+
+                    <div class="card-title">
+                        TERA NETWORK
+                    </div>
+
+                    <div class="online">
+
+                        <i></i>
+
+                        REDE ONLINE
+
+                    </div>
+
+                </div>
+
+
+                <div class="speed">
+
+                    1
+
+                    <span>
+                        Gbps
+                    </span>
+
+                </div>
+
+
+                <div class="speed-info">
+
+                    Velocidade de conexão disponível*
+
+                </div>
+
+
+                <div class="speed-bar">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="mini-grid">
+
+
+                    <div class="mini-card">
+
+                        <div class="mini-icon">
+                            ⚡
+                        </div>
+
+                        <strong>
+                            Alta velocidade
+                        </strong>
+
+                        <small>
+                            Navegação rápida
+                        </small>
+
+                    </div>
+
+
+                    <div class="mini-card">
+
+                        <div class="mini-icon">
+                            🎮
+                        </div>
+
+                        <strong>
+                            Baixa latência
+                        </strong>
+
+                        <small>
+                            Jogos online
+                        </small>
+
+                    </div>
+
+
+                    <div class="mini-card">
+
+                        <div class="mini-icon">
+                            📺
+                        </div>
+
+                        <strong>
+                            Streaming
+                        </strong>
+
+                        <small>
+                            Alta qualidade
+                        </small>
+
+                    </div>
+
+
+                    <div class="mini-card">
+
+                        <div class="mini-icon">
+                            🏢
+                        </div>
+
+                        <strong>
+                            Empresas
+                        </strong>
+
+                        <small>
+                            Conexão profissional
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     BENEFÍCIOS
+===================================================== -->
+
+<section class="information">
+
+    <div class="info-container">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Internet rápida
+            </h3>
+
+            <p>
+                Navegue, baixe arquivos e
+                assista conteúdos com
+                excelente velocidade.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                📡
+            </div>
+
+            <h3>
+                Fibra e rádio
+            </h3>
+
+            <p>
+                Soluções de conectividade
+                para diferentes necessidades
+                e regiões.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Conexão estável
+            </h3>
+
+            <p>
+                Estrutura preparada para
+                manter você conectado no
+                dia a dia.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                💬
+            </div>
+
+            <h3>
+                Atendimento
+            </h3>
+
+            <p>
+                Suporte e atendimento para
+                ajudar você sempre que
+                precisar.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PLANOS
+===================================================== -->
+
+<section
+    class="plans"
+    id="planos"
+>
+
+
+    <div class="section-header">
+
+        <div class="section-tag">
+            PLANOS TERA TELECOM
+        </div>
+
+        <h2>
+            Escolha sua velocidade
+        </h2>
+
+        <p>
+            Planos pensados para diferentes
+            perfis de uso, desde navegação
+            cotidiana até entretenimento e
+            trabalho.
+        </p>
+
+    </div>
+
+
+    <div class="plans-grid">
+
+
+        <div class="plan">
+
+
+            <div class="plan-name">
+                PLANO RESIDENCIAL
+            </div>
+
+
+            <div class="plan-speed">
+
+                300
+
+                <span>
+                    Mbps
+                </span>
+
+            </div>
+
+
+            <div class="plan-price">
+                Consulte disponibilidade e valor
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Internet de alta velocidade
+                </li>
+
+                <li>
+                    Wi-Fi para sua casa
+                </li>
+
+                <li>
+                    Suporte especializado
+                </li>
+
+                <li>
+                    Conexão para streaming
+                </li>
+
+                <li>
+                    Ideal para uso diário
+                </li>
+
+            </ul>
+
+
+            <a
+                href="#contato"
+                class="plan-button"
+            >
+                Quero este plano
+            </a>
+
+
+        </div>
+
+
+
+        <div class="plan featured">
+
+
+            <div class="recommended">
+                MAIS PROCURADO
+            </div>
+
+
+            <div class="plan-name">
+                PLANO PERFORMANCE
+            </div>
+
+
+            <div class="plan-speed">
+
+                600
+
+                <span>
+                    Mbps
+                </span>
+
+            </div>
+
+
+            <div class="plan-price">
+                Consulte disponibilidade e valor
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Alta velocidade
+                </li>
+
+                <li>
+                    Streaming em alta qualidade
+                </li>
+
+                <li>
+                    Jogos online
+                </li>
+
+                <li>
+                    Trabalho e estudos
+                </li>
+
+                <li>
+                    Vários dispositivos
+                </li>
+
+            </ul>
+
+
+            <a
+                href="#contato"
+                class="plan-button"
+            >
+                Quero este plano
+            </a>
+
+
+        </div>
+
+
+
+        <div class="plan">
+
+
+            <div class="plan-name">
+                PLANO ULTRA
+            </div>
+
+
+            <div class="plan-speed">
+
+                1
+
+                <span>
+                    Gbps
+                </span>
+
+            </div>
+
+
+            <div class="plan-price">
+                Consulte disponibilidade e valor
+            </div>
+
+
+            <ul>
+
+                <li>
+                    Velocidade máxima
+                </li>
+
+                <li>
+                    Grande quantidade de dispositivos
+                </li>
+
+                <li>
+                    Streaming pesado
+                </li>
+
+                <li>
+                    Downloads rápidos
+                </li>
+
+                <li>
+                    Uso residencial avançado
+                </li>
+
+            </ul>
+
+
+            <a
+                href="#contato"
+                class="plan-button"
+            >
+                Quero este plano
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TECNOLOGIA
+===================================================== -->
+
+<section
+    class="technology"
+    id="tecnologia"
+>
+
+
+    <div class="technology-container">
+
+
+        <div class="technology-text">
+
+            <div class="section-tag">
+                TECNOLOGIA TERA
+            </div>
+
+
+            <h2>
+
+                Conexão feita para
+                <span>
+                    acompanhar você.
+                </span>
+
+            </h2>
+
+
+            <p>
+
+                A TERA TELECOM trabalha com soluções
+                de conectividade por fibra óptica e rádio,
+                buscando oferecer uma experiência rápida,
+                estável e adequada às necessidades de
+                cada cliente.
+
+            </p>
+
+
+            <p>
+
+                Seja para sua residência ou empresa,
+                nossa proposta é manter você conectado
+                ao que realmente importa.
+
+            </p>
+
+        </div>
+
+
+        <div class="technology-cards">
+
+
+            <div class="tech-card">
+
+                <div class="icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Fibra óptica
+                </h3>
+
+                <p>
+                    Tecnologia de alta capacidade
+                    para conexões rápidas e
+                    modernas.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="icon">
+                    📡
+                </div>
+
+                <h3>
+                    Internet via rádio
+                </h3>
+
+                <p>
+                    Alternativa de conectividade
+                    para regiões atendidas pela
+                    tecnologia.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Entretenimento
+                </h3>
+
+                <p>
+                    Assista, jogue e navegue
+                    utilizando vários dispositivos.
+                </p>
+
+            </div>
+
+
+            <div class="tech-card">
+
+                <div class="icon">
+                    🏢
+                </div>
+
+                <h3>
+                    Empresas
+                </h3>
+
+                <p>
+                    Soluções de internet para
+                    negócios que precisam estar
+                    conectados.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section
+    class="cta"
+    id="contato"
+>
+
+
+    <h2>
+        Pronto para mudar a
+        sua conexão?
+    </h2>
+
+
+    <p>
+
+        Consulte nossa cobertura e descubra
+        qual solução TERA TELECOM está
+        disponível para você.
+
+    </p>
+
+
+    <a
+        href="https://wa.me/"
+        class="cta-button"
+        target="_blank"
+    >
+
+        💬 FALAR COM A TERA TELECOM
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-logo">
+
+            TERA <span>TELECOM</span>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            Internet por fibra óptica e rádio<br>
+
+            Canaã dos Carajás — PA<br>
+
+            © <span id="year"></span>
+            Navarro
+            
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   HEADER AO ROLAR
+===================================================== */
+
+const header =
+    document.getElementById("header");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (window.scrollY > 40) {
+
+            header.classList.add(
+                "scrolled"
+            );
+
+        } else {
+
+            header.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+const menuButton =
+    document.getElementById(
+        "menuButton"
+    );
+
+const menu =
+    document.getElementById(
+        "menu"
+    );
+
+
+menuButton.addEventListener(
+    "click",
+    () => {
+
+        menu.classList.toggle(
+            "open"
+        );
+
+        menuButton.textContent =
+            menu.classList.contains("open")
+                ? "✕"
+                : "☰";
+
+    }
+);
+
+
+
+/* FECHAR MENU */
+
+document
+    .querySelectorAll(".menu a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                menu.classList.remove(
+                    "open"
+                );
+
+                menuButton.textContent =
+                    "☰";
+
+            }
+        );
+
+    });
+
+
+
+/* =====================================================
+   PARTÍCULAS
+===================================================== */
+
+const particles =
+    document.getElementById(
+        "particles"
+    );
+
+
+for (
+    let i = 0;
+    i < 35;
+    i++
+) {
+
+    const particle =
+        document.createElement(
+            "span"
+        );
+
+    particle.className =
+        "particle";
+
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+
+    particle.style.animationDuration =
+        (7 + Math.random() * 12)
+        + "s";
+
+
+    particle.style.animationDelay =
+        -(Math.random() * 12)
+        + "s";
+
+
+    particle.style.opacity =
+        .2 + Math.random() * .5;
+
+
+    particles.appendChild(
+        particle
+    );
+
+}
+
+
+
+/* =====================================================
+   EFEITO PARALLAX
+===================================================== */
+
+const card =
+    document.getElementById(
+        "internetCard"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        if (
+            window.innerWidth < 1000
+        ) {
+            return;
+        }
+
+
+        const x =
+            (
+                window.innerWidth / 2
+                -
+                event.clientX
+            ) / 100;
+
+
+        const y =
+            (
+                window.innerHeight / 2
+                -
+                event.clientY
+            ) / 100;
+
+
+        card.style.setProperty(
+            "--mouseX",
+            `${x}px`
+        );
+
+
+        card.style.setProperty(
+            "--mouseY",
+            `${y}px`
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   ANO AUTOMÁTICO
+===================================================== */
+
+document.getElementById(
+    "year"
+).textContent =
+    new Date().getFullYear();
+
+
+
+/* =====================================================
+   ANIMAÇÃO AO ENTRAR NA TELA
+===================================================== */
+
+const animatedElements =
+    document.querySelectorAll(
+        ".info-card, .plan, .tech-card"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.style.opacity =
+                            "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold: .15
+        }
+    );
+
+
+animatedElements.forEach(
+    element => {
+
+        element.style.opacity =
+            "0";
+
+        element.style.transform =
+            "translateY(25px)";
+
+        element.style.transition =
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(
+            element
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   EFEITO NOS BOTÕES
+===================================================== */
+
+document
+    .querySelectorAll(".btn, .plan-button")
+    .forEach(button => {
+
+        button.addEventListener(
+            "mouseenter",
+            () => {
+
+                button.style.filter =
+                    "brightness(1.12)";
+
+            }
+        );
+
+
+        button.addEventListener(
+            "mouseleave",
+            () => {
+
+                button.style.filter =
+                    "brightness(1)";
+
+            }
+        );
+
+    });
+
+
+</script>
+
+
+</body>
+
+</html>
+```
